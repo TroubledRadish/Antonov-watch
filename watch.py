@@ -5,7 +5,7 @@ transponder shows up in ADS-B coverage (i.e. it "turns on").
 Standard library only - no pip install needed. Works the same when run
 locally or inside GitHub Actions; everything is driven by env vars:
 
-  ADSB_HEX     4b1815           (default 50801b)
+  ADSB_HEX     ISON of aircraft           (default 50801b)
   NTFY_TOPIC   ntfy.sh topic to publish to  (required for notifications)
   NTFY_SERVER  ntfy server                  (default https://ntfy.sh)
   STATE_FILE   where to persist state       (default state.json)
@@ -20,7 +20,7 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
-HEX = os.environ.get("ADSB_HEX", "50801b").lower()
+HEX = os.environ.get("ADSB_HEX", "4b1815").lower()
 NTFY_SERVER = os.environ.get("NTFY_SERVER", "https://ntfy.sh").rstrip("/")
 NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "").strip()
 STATE_FILE = os.environ.get("STATE_FILE", "state.json")
