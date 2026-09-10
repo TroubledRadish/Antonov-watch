@@ -20,7 +20,7 @@ jobs:
 
       - name: Poll adsb.fi and push on transition
         env:
-          ADSB_HEX: "ae057b"
+          ADSB_HEX: "50801b"
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           STATE_FILE: state.json
         run: python3 watch.py
